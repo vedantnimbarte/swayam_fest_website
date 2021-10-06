@@ -1,0 +1,92 @@
+<main>
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+        <a href="/home" class="logo">
+            Swayam 2021
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="/home" class="nav-link text-white" aria-current="page">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#home" />
+                    </svg>
+                    Registered Members
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/approvalRequest" class="nav-link active">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#speedometer2" />
+                    </svg>
+                    Request for Approval
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/approvedRequest" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#table" />
+                    </svg>
+                    Payment Approved List
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>{{name}}</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="b-example-divider"></div>
+    <div class="col p-1" style="background-color: rgb(236, 236, 236);">
+        <div class="row mt-3 mx-5">
+            <div style=" padding: 10px; border-radius: 5px; display: flex; align-items: center;">
+                <i class="fas fa-building fa-3x"></i>
+                <div style="margin-left: 10px;">
+                    <h4>List of Request for Approval</h4>
+                    <p style="color: gray">This page contains list of requests for approval
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="col table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-heading">Designation</th>
+                        <th scope="col" class="table-heading">Fullname</th>
+                        <th scope="col" class="table-heading">Payment for workshop</th>
+                        <th scope="col" class="table-heading">Transaction Number</th>
+                        <th scope="col" class="table-heading">Transaction Date</th>
+                        <th scope="col" class="table-heading">Request Date</th>
+                        <th scope="col" class="table-heading">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if data}}
+                    {{#each data}}
+                    <tr class="table-data">
+                        <th scope="row">{{designation}}</th>
+                        <td>{{name}}</td>
+                        <td>{{workshop_name}}</td>
+                        <td>{{transaction_number}}</td>
+                        <td>{{transaction_date}}</td>
+                        <td>{{request_date}}</td>
+                        <td>{{status}} <a href="/editInfo?id={{id}}" class="pen-icon-container"><i class="fas fa-pen edit-icon"></i></a></td>
+                    </tr>
+                    {{/each}}
+                    {{/if}}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

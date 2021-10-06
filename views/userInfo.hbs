@@ -1,0 +1,133 @@
+<main>
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+        <a href="/home" class="logo">
+            Swayam 2021
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="/home" class="nav-link text-white" aria-current="page">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#home" />
+                    </svg>
+                    Registered Members
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/approvalRequest" class="nav-link active">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#speedometer2" />
+                    </svg>
+                    Request for Approval
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/approvedRequest" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#table" />
+                    </svg>
+                    Payment Approved List
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>{{name}}</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+
+                <li><a class="dropdown-item" href="/">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="b-example-divider"></div>
+    <div class="col p-2 infoContainerWrapper" style="background-color: rgb(236, 236, 236);">
+        <div class="userInfoContainer">
+            <h6 class="title">Author</h6>
+            <div class="userDetailsContainer">
+                <div class="userInfoItem">
+                    <p class="subTitle">name</p>
+                    <p class="userDetailsInfo">{{data.name}}</p>
+                </div>
+                <div class="userInfoItem">
+                    <p class="subTitle">phone</p>
+                    <p class="userDetailsInfo">{{data.mobile_no}}</p>
+                </div>
+                <div class="userInfoItem">
+                    <p class="subTitle">email</p>
+                    <p class="userDetailsInfo">{{data.email}}</p>
+                </div>
+                <div class="userInfoItem">
+                    <p class="subTitle">designation</p>
+                    <p class="userDetailsInfo">{{data.designation}}</p>
+                </div>
+                <div class="userInfoItem">
+                    <p class="subTitle">affiliation/institution</p>
+                    <p class="userDetailsInfo">{{data.affiliation}}</p>
+                </div>
+                <div class="userInfoItem">
+                    <p class="subTitle">isam membership</p>
+                    <p class="userDetailsInfo">{{data.isam_membership}}</p>
+                </div>
+                <div class="userInfoItem">
+                    <p class="subTitle">participating role</p>
+                    <p class="userDetailsInfo">{{data.participating_role}}</p>
+                </div>
+                <div class="userInfoItem">
+                    <p class="subTitle">registration status</p>
+                    <p class="userDetailsInfo">{{data.status}}</p>
+                </div>
+            </div>
+            <div class="easyChairDetailsContainer">
+                <h6 class="title">easychair id</h6>
+                <div class="userDetailsContainer">
+                    <div class="userInfoItem">
+                        <p class="subTitle">EasyChair Id: </p>
+                        <p class="userDetailsInfo">{{data.easychair_id}}</p>
+                    </div>
+                    <div class="userInfoItem">
+                        <p class="subTitle">Payment Receipt: </p>
+                        <a href="{{data.receipt_url}}" target="_blank" class="userDetailsInfo">View Receipt</a>
+                    </div>
+                </div>
+                <form action="/editInfo?id={{data.id}}" method="post" id="statusUpdate">
+                    <div class="userInfoItem">
+                        <div>
+                            <p class="subTitle">registration status:</p>
+                            <select name="status" id="status">
+                                <option value="pending">Pending</option>
+                                <option value="approved">Approved</option>
+                            </select>
+                            <button type="submit">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="eventInfoContainer">
+            <h6 class="title">important dates</h6>
+            <ul>
+                <li class="eventInfo">Early bid registration: April 30 to June 10 2021</li>
+                <li class="eventInfo">Regular registration: April 30 to June 10,2021</li>
+            </ul>
+            <h6 class="title">conference registration</h6>
+            <ul>
+                <li class="eventInfo">Students: Early:Rs 3000, Regular:Rs 3500</li>
+                <li class="eventInfo">Regular registration: April 30 to June 10,2019</li>
+                <li class="eventInfo">Participition from and Government Institute: Early:Rs 7500, Regular:Rs 9000</li>
+                <li class="eventInfo">Participition from and Government Institute: Early:Rs 7500, Regular:Rs 9000</li>
+                <li class="eventInfo">Participition from and Government Institute: Early:Rs 7500, Regular:Rs 9000</li>
+            </ul>
+            <h6 class="title">workshop registration</h6>
+            <ul>
+                <li class="eventInfo">ISAM Membership Discount: Early:Rs 2000, Regular:Rs 2500</li>
+                <li class="eventInfo">Participition from and Government Institute: Early:Rs 5000, Regular:Rs 5500</li>
+                <li class="eventInfo">Participants from industry: Early:Rs 7500, Regular:Rs 8000</li>
+            </ul>
+        </div>
+    </div>
+</main>
